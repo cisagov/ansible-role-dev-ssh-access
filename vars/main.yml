@@ -1,0 +1,5 @@
+---
+# vars file for ansible-role-dev-ssh-access
+
+# The development users
+dev_users: "{{ lookup('aws_ssm', '/cyhy/dev/users').split(',') }}"

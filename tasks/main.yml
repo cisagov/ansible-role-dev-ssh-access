@@ -1,2 +1,27 @@
 ---
-# tasks file for skeleton
+# tasks file for ansible-role-dev-ssh-access
+
+- name: Ensure wheel group exists
+  group:
+    name: wheel
+    state: present
+
+- name: Allow wheel group to have passwordless sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%wheel'
+    line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'
+
+- name: Create dev users and assign to wheel group
+  user:
+    name: "{{ item }}"
+    groups: wheel
+  loop: "{{ dev_users }}"
+
+- name: Add ssh public key as authorized key for dev users
+  authorized_key:
+    user: "{{ item }}"
+    key: "{{ lookup('aws_ssm', '/ssh/public_keys/{{ item }}') }}"
+  loop: "{{ dev_users }}"
