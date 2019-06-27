@@ -4,13 +4,7 @@
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/cisagov/ansible-role-dev-ssh-access.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-dev-ssh-access/alerts/)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-dev-ssh-access.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-dev-ssh-access/context:python)
 
-This is a skeleton project that can be used to quickly get a new
-[cisagov](https://github.com/cisagov) Ansible role GitHub project
-started.  This skeleton project contains [licensing
-information](LICENSE), as well as [pre-commit
-hooks](https://pre-commit.com) and a [Travis
-CI](https://travis-ci.com) configuration appropriate for an Ansible
-role.
+An Ansible role for setting up SSH access for the development team.
 
 ## Requirements ##
 
@@ -33,7 +27,7 @@ Here's how to use it in a playbook:
   become: yes
   become_method: sudo
   roles:
-    - skeleton
+    - dev_ssh_access
 ```
 
 ## Contributing ##
