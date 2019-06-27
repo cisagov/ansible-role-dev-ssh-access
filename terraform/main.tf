@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 module "iam_user" {
-  source = "git::https://github.com/cisagov/aws-parameter-store-read-only-iam-user-tf-module.git?ref=improvement/allow_wildcard_params"
+  source = "github.com/cisagov/aws-parameter-store-read-only-iam-user-tf-module"
 
   ssm_parameters = ["/cyhy/dev/users", "/ssh/public_keys/*"]
   user_name      = "test-ansible-role-dev-ssh-access"
