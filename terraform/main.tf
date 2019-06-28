@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 module "iam_user" {
-  source = "github.com/cisagov/aws-parameter-store-read-only-iam-user-tf-module"
+  source = "github.com/cisagov/molecule-packer-travisci-iam-user-tf-module"
 
   ssm_parameters = ["/cyhy/dev/users", "/ssh/public_keys/*"]
   user_name      = "test-ansible-role-dev-ssh-access"
