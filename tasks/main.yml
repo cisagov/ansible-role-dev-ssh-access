@@ -18,6 +18,7 @@
   user:
     name: "{{ item }}"
     groups: wheel
+    shell: /bin/bash
   loop: "{{ dev_users }}"
 
 - name: Add ssh public key as authorized key for dev users
