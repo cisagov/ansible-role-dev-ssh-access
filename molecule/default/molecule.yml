@@ -8,6 +8,10 @@ lint:
 platforms:
   - name: debian9
     image: debian:stretch-slim
+  - name: debian10
+    image: debian:buster-slim
+  - name: fedora29
+    image: fedora:29
 provisioner:
   name: ansible
   lint:
