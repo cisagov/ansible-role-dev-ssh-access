@@ -8,3 +8,10 @@
     - name: Install boto3
       pip:
         name: boto3
+    # The Amazon Linux 2 Docker image does not have the groupmod
+    # utility installed.
+    - name: Install shadow-utils (Amazon-only)
+      package:
+        name:
+          - shadow-utils
+      when: ansible_distribution == 'Amazon'
