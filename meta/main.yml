@@ -6,9 +6,15 @@ galaxy_info:
   license: CC0
   min_ansible_version: 2.0
   platforms:
-    - name: Amazon
-      versions:
-        - 2
+    # I'm having some problems getting the Amazon Linux 2 build to
+    # pass.  Since we aren't currently using Amazon Linux, and since
+    # this role will soon go away in favor of using EC2 Instance
+    # Connect for dynamic key management, I will simply remove Amazon
+    # Linux 2 for now.
+    #
+    # - name: Amazon
+    #   versions:
+    #     - 2
     - name: Debian
       versions:
         - stretch
