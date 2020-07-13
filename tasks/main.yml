@@ -24,5 +24,5 @@
 - name: Add ssh public key as authorized key for dev users
   authorized_key:
     user: "{{ item }}"
-    key: "{{ lookup('aws_ssm', '/ssh/public_keys/{{ item }}') }}"
+    key: "{{ lookup('aws_ssm', ''.join(['/ssh/public_keys/', item])) }}"
   loop: "{{ dev_users }}"
