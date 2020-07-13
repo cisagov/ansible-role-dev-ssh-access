@@ -1,13 +1,7 @@
 ---
-# boto3 is installed anywhere we would be applying this Ansible role
 - name: Prepare
   hosts: all
-  roles:
-    - pip
   tasks:
-    - name: Install boto3
-      pip:
-        name: boto3
     # The Amazon Linux 2 Docker image does not have the groupmod
     # utility installed.
     - name: Install shadow-utils (Amazon-only)
