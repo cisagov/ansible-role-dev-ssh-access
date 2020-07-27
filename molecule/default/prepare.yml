@@ -5,8 +5,14 @@
 - name: Import python playbook
   import_playbook: python.yml
 
-- name: Prepare
+- name: Group hosts by OS distribution
   hosts: all
+  tasks:
+    - name: Group hosts by OS distribution
+      group_by:
+        key: os_{{ ansible_distribution }}
+- name: Install shadow-utils (Amazon)
+  hosts: os_Amazon
   tasks:
     # The Amazon Linux 2 Docker image does not have the groupmod
     # utility installed.
@@ -14,4 +20,3 @@
       package:
         name:
           - shadow-utils
-      when: ansible_distribution == 'Amazon'
