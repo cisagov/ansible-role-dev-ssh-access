@@ -4,7 +4,7 @@ galaxy_info:
   description: Set up SSH access for development team members
   company: CISA Cyber Assessments
   galaxy_tags:
-    - skeleton
+    - ssh
   license: CC0
   min_ansible_version: 2.0
   platforms:
@@ -33,11 +33,6 @@ galaxy_info:
       versions:
         - bionic
         - xenial
-<<<<<<< HEAD
-  galaxy_tags:
-    - ssh
-=======
-  role_name: skeleton
->>>>>>> 05c10e6aff9ff1f827e3b4b10511f9b28fa05b71
+  role_name: dev_ssh_access
 
 dependencies: []
