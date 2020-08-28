@@ -3,6 +3,8 @@ galaxy_info:
   author: David Redmin
   description: Set up SSH access for development team members
   company: CISA Cyber Assessments
+  galaxy_tags:
+    - ssh
   license: CC0
   min_ansible_version: 2.0
   platforms:
@@ -31,7 +33,6 @@ galaxy_info:
       versions:
         - bionic
         - xenial
-  galaxy_tags:
-    - ssh
+  role_name: dev_ssh_access
 
 dependencies: []
