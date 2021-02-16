@@ -6,6 +6,8 @@
         name: wheel
         state: present
 
+    # We need passwordless sudo here since our admins are authenticating with
+    # ssh keys and do not have passwords associated with their accounts.
     - name: Allow wheel group to have passwordless sudo
       lineinfile:
         dest: /etc/sudoers
