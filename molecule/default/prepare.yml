@@ -1,15 +1,15 @@
 ---
 - name: Import upgrade playbook
-  import_playbook: upgrade.yml
+  ansible.builtin.import_playbook: upgrade.yml
 
 - name: Import python playbook
-  import_playbook: python.yml
+  ansible.builtin.import_playbook: python.yml
 
 - name: Group hosts by OS distribution
   hosts: all
   tasks:
     - name: Group hosts by OS distribution
-      group_by:
+      ansible.builtin.group_by:
         key: os_{{ ansible_distribution }}
 - name: Install shadow-utils (Amazon)
   hosts: os_Amazon
@@ -17,6 +17,6 @@
     # The Amazon Linux 2 Docker image does not have the groupmod
     # utility installed.
     - name: Install shadow-utils (Amazon-only)
-      package:
+      ansible.builtin.package:
         name:
           - shadow-utils

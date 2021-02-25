@@ -2,12 +2,12 @@
 - name: Configure wheel group with passwordless sudo
   block:
     - name: Ensure wheel group exists
-      group:
+      ansible.builtin.group:
         name: wheel
         state: present
 
     - name: Allow wheel group to have passwordless sudo
-      lineinfile:
+      ansible.builtin.lineinfile:
         dest: /etc/sudoers
         state: present
         regexp: '^%wheel'
@@ -17,7 +17,7 @@
 - name: Create and configure dev users
   block:
     - name: Create dev users and assign to wheel group
-      user:
+      ansible.builtin.user:
         name: "{{ item }}"
         groups: wheel
         shell: /bin/bash
@@ -26,13 +26,13 @@
     # These permissions are necessary for a hardened OS, and they just
     # seem like a good idea anyway
     - name: Modify permissions on dev users' home directories
-      file:
+      ansible.builtin.file:
         mode: 0750
         path: /home/{{ item }}
       loop: "{{ dev_users }}"
 
     - name: Add ssh public key as authorized key for dev users
-      authorized_key:
+      ansible.posix.authorized_key:
         user: "{{ item }}"
         key: "{{ lookup('aws_ssm', ''.join(['/ssh/public_keys/', item])) }}"
       loop: "{{ dev_users }}"

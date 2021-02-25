@@ -36,7 +36,6 @@ galaxy_info:
         - 33
     - name: Ubuntu
       versions:
-        - xenial
         - bionic
         - focal
   role_name: dev_ssh_access
