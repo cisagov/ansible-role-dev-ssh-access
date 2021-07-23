@@ -8,6 +8,7 @@ on:
     types: [apb]
 
 env:
+  AWS_DEFAULT_REGION: us-east-1
   CURL_CACHE_DIR: ~/.cache/curl
   PIP_CACHE_DIR: ~/.cache/pip
   PRE_COMMIT_CACHE_DIR: ~/.cache/pre-commit
