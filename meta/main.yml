@@ -12,6 +12,7 @@ galaxy_info:
   # Kali Linux, so it makes sense to force the installation of Ansible
   # 2.10 or newer.
   min_ansible_version: 2.10
+  namespace: cisagov
   platforms:
     # I'm having some problems getting the Amazon Linux 2 build to
     # pass.  Since we aren't currently using Amazon Linux, and since
