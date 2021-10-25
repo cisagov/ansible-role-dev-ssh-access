@@ -1,5 +1,7 @@
 ---
 - name: Converge
   hosts: all
-  roles:
-    - role: ansible-role-dev-ssh-access
+  tasks:
+    - name: Include ansible-role-dev-ssh-access
+      ansible.builtin.include_role:
+        name: ansible-role-dev-ssh-access
