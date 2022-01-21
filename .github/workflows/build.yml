@@ -140,9 +140,6 @@ jobs:
           role-to-assume: ${{ secrets.TEST_ROLE_TO_ASSUME }}
           role-duration-seconds: 3600
       - name: Run molecule tests
-        env:
-            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: molecule test --scenario-name ${{ matrix.scenario }}
       - name: Setup tmate debug session
         uses: mxschmitt/action-tmate@v3
