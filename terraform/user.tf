@@ -10,6 +10,6 @@ module "user" {
     aws.images-staging-ssm                 = aws.images_staging_ssm
   }
 
-  entity         = "test-ansible-role-dev-ssh-access"
+  entity         = "ansible-role-dev-ssh-access"
   ssm_parameters = ["/cyhy/dev/users", "/ssh/public_keys/*"]
 }
