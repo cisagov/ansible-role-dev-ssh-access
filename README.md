@@ -82,7 +82,7 @@ Here's how to use it in a playbook:
   become: yes
   become_method: sudo
   tasks:
-    - name: Add ssh access for develoment team
+    - name: Add ssh access for development team
       ansible.builtin.include_role:
         name: dev_ssh_access
 ```
