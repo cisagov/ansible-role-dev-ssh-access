@@ -11,7 +11,7 @@ galaxy_info:
   # OS family.  This simplifies a lot of things for roles that support
   # Kali Linux, so it makes sense to force the installation of Ansible
   # 2.10 or newer.
-  min_ansible_version: 2.10
+  min_ansible_version: "2.10"
   namespace: cisagov
   platforms:
     # I'm having some problems getting the Amazon Linux 2 build to
@@ -34,12 +34,14 @@ galaxy_info:
         - bookworm
     - name: Fedora
       versions:
-        - 34
-        - 35
+        - "35"
+        - "36"
+        - "37"
     - name: Ubuntu
       versions:
         - bionic
         - focal
+        - jammy
   role_name: dev_ssh_access
 
 dependencies: []

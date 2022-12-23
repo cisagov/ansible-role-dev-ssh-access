@@ -2,9 +2,6 @@
 - name: Import upgrade playbook
   ansible.builtin.import_playbook: upgrade.yml
 
-- name: Import python playbook
-  ansible.builtin.import_playbook: python.yml
-
 - name: Group hosts by OS distribution
   hosts: all
   tasks:
