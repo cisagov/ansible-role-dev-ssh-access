@@ -21,8 +21,9 @@ platforms:
   # will soon go away in favor of using EC2 Instance Connect for
   # dynamic key management, I will simply remove Amazon Linux 2 for
   # now.
-  # - name: amazonlinux2
-  #   image: amazonlinux:2
+  # - image: amazonlinux:2
+  #   name: amazonlinux2
+  #   platform: amd64
   - dockerfile: Dockerfile_debian_9.j2
     image: debian:stretch-slim
     name: debian9
