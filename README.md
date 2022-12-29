@@ -1,8 +1,7 @@
 # ansible-role-dev-ssh-access #
 
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-dev-ssh-access/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-dev-ssh-access/actions)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/cisagov/ansible-role-dev-ssh-access.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-dev-ssh-access/alerts/)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-dev-ssh-access.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-dev-ssh-access/context:python)
+[![CodeQL](https://github.com/cisagov/ansible-role-dev-ssh-access/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-dev-ssh-access/actions/workflows/codeql-analysis.yml)
 
 An Ansible role for setting up SSH access for the development team.
 
@@ -82,8 +81,10 @@ Here's how to use it in a playbook:
 - hosts: all
   become: yes
   become_method: sudo
-  roles:
-    - dev_ssh_access
+  tasks:
+    - name: Add ssh access for development team
+      ansible.builtin.include_role:
+        name: dev_ssh_access
 ```
 
 ## Contributing ##
