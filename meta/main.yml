@@ -15,28 +15,21 @@ galaxy_info:
   min_ansible_version: "2.10"
   namespace: cisagov
   platforms:
-    # I'm having some problems getting the Amazon Linux 2 build to
-    # pass.  Since we aren't currently using Amazon Linux, and since
-    # this role will soon go away in favor of using EC2 Instance
-    # Connect for dynamic key management, I will simply remove Amazon
-    # Linux 2 for now.
-    #
-    # - name: Amazon Linux 2
-    #   versions:
-    #     - any
+    - name: Amazon Linux 2023
+      versions:
+        - any
     - name: Debian
       versions:
-        - stretch
         - buster
         - bullseye
-        # Kali linux isn't an option here, but it is based on
-        # Debian Testing:
-        # https://www.kali.org/docs/policy/kali-linux-relationship-with-debian
         - bookworm
     - name: Fedora
       versions:
         - "36"
         - "37"
+    - name: Kali
+      versions:
+        - "2023"
     - name: Ubuntu
       versions:
         - bionic
