@@ -29,7 +29,7 @@
     # seem like a good idea anyway
     - name: Modify permissions on dev users' home directories
       ansible.builtin.file:
-        mode: 0750
+        mode: u=rwx,g=rx,o=
         path: /home/{{ item }}
       loop: "{{ dev_users }}"
 
