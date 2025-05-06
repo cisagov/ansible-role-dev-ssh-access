@@ -12,9 +12,15 @@
       ansible.builtin.lineinfile:
         dest: /etc/sudoers
         state: present
+        # yamllint complains about quoted strings below, but we want
+        # the quotes so that the regex special characters and the
+        # percents are not interpreted as YAML special characters.
+        #
+        # yamllint disable rule:quoted-strings
         regexp: '^%wheel'
         line: '%wheel ALL=(ALL) NOPASSWD: ALL'
         validate: 'visudo -cf %s'
+        # yamllint disable rule:quoted-strings
 
 - name: Create and configure dev users
   block:
@@ -29,7 +35,7 @@
     # seem like a good idea anyway
     - name: Modify permissions on dev users' home directories
       ansible.builtin.file:
-        mode: 0750
+        mode: u=rwx,g=rx,o=
         path: /home/{{ item }}
       loop: "{{ dev_users }}"
 
