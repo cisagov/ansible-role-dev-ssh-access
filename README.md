@@ -1,6 +1,7 @@
 # ansible-role-dev-ssh-access #
 
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-dev-ssh-access/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-dev-ssh-access/actions)
+[![License](https://img.shields.io/github/license/cisagov/ansible-role-dev-ssh-access)](https://spdx.org/licenses/)
 [![CodeQL](https://github.com/cisagov/ansible-role-dev-ssh-access/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-dev-ssh-access/actions/workflows/codeql-analysis.yml)
 
 An Ansible role for setting up SSH access for the development team.
