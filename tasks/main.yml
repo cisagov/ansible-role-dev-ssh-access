@@ -1,4 +1,8 @@
 ---
+- name: Retrieve the list of users to add
+  ansible.builtin.set_fact:
+    dev_users: "{{ lookup('amazon.aws.aws_ssm', dev_users_ssm_parameter).split(',') }}"
+
 - name: Configure wheel group with passwordless sudo
   block:
     - name: Ensure wheel group exists
