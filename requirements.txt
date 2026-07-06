@@ -1,2 +1,2 @@
 boto3
-setuptools>=70.1
+setuptools>=83.0.0
